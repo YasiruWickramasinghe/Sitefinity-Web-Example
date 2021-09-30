@@ -1,0 +1,177 @@
+----------------------------------------
+Timestamp: 9/29/2021 6:25:38 AM
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:25:38 AM
+
+Message: Adding a foreign key constraint(s) to a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:25:38 AM
+
+Message: Adding a new table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:25:38 AM
+
+Message: Modifying a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:25:39 AM
+
+Message: -- Telerik.Sitefinity.DynamicTypes.Model.sf_contactus
+CREATE TABLE [sf_fm_sf_contactus] (
+    [id] uniqueidentifier NOT NULL,
+    [pragraph_text_field_controller] NVARCHAR(MAX) NULL, -- sf_contactus.ParagraphTextFieldController
+    [text_field_controller] NVARCHAR(255) NULL, -- sf_contactus.TextFieldController
+    [text_field_controller_1] NVARCHAR(255) NULL, -- sf_contactus.TextFieldController_1
+    [text_field_controller_0] NVARCHAR(255) NULL, -- sf_contactus.TextFieldController_0
+    [email_text_field_controller] NVARCHAR(255) NULL, -- sf_contactus.EmailTextFieldController
+    CONSTRAINT [pk_sf_fm_sf_contactus] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:25:39 AM
+
+Message: -- Column was read from database as: [voa_class] int null
+-- modify column for field <internal-class-id>
+UPDATE [sf_form_entry]
+   SET [voa_class] = 0 -- Add your own default value here, for when [voa_class] is null.
+ WHERE [voa_class] IS NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:25:39 AM
+
+Message: ALTER TABLE [sf_form_entry] ALTER COLUMN [voa_class] int NOT NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:25:39 AM
+
+Message: ALTER TABLE [sf_fm_sf_contactus] ADD CONSTRAINT [ref_sf_fm_sf_cntcts_s_D746F8B5] FOREIGN KEY ([id]) REFERENCES [sf_form_entry]([id]) ON DELETE CASCADE
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:38:41 AM
+
+Message: Db Migration Complexity: Extending
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:38:41 AM
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:38:41 AM
+
+Message: -- add column for field sf_contactus.TextFieldController_4
+ALTER TABLE [sf_fm_sf_contactus] ADD [text_field_controller_4] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:38:41 AM
+
+Message: -- add column for field sf_contactus.TextFieldController_3
+ALTER TABLE [sf_fm_sf_contactus] ADD [text_field_controller_3] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:38:41 AM
+
+Message: -- add column for field sf_contactus.TextFieldController_5
+ALTER TABLE [sf_fm_sf_contactus] ADD [text_field_controller_5] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:38:41 AM
+
+Message: -- add column for field sf_contactus.TextFieldController_2
+ALTER TABLE [sf_fm_sf_contactus] ADD [text_field_controller_2] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 6:38:41 AM
+
+Message: -- add column for field sf_contactus.TextFieldController_6
+ALTER TABLE [sf_fm_sf_contactus] ADD [text_field_controller_6] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 7:36:27 AM
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 7:36:27 AM
+
+Message: Removing a column(s) from an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 7:36:27 AM
+
+Message: -- dropping unknown column [text_field_controller_4]
+ALTER TABLE [sf_fm_sf_contactus] DROP COLUMN [text_field_controller_4]
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 7:36:27 AM
+
+Message: -- dropping unknown column [text_field_controller_3]
+ALTER TABLE [sf_fm_sf_contactus] DROP COLUMN [text_field_controller_3]
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 7:36:27 AM
+
+Message: -- dropping unknown column [text_field_controller_5]
+ALTER TABLE [sf_fm_sf_contactus] DROP COLUMN [text_field_controller_5]
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 7:36:27 AM
+
+Message: -- dropping unknown column [text_field_controller_2]
+ALTER TABLE [sf_fm_sf_contactus] DROP COLUMN [text_field_controller_2]
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 9/29/2021 7:36:27 AM
+
+Message: -- dropping unknown column [text_field_controller_6]
+ALTER TABLE [sf_fm_sf_contactus] DROP COLUMN [text_field_controller_6]
+
+
+----------------------------------------
